@@ -1,6 +1,8 @@
 # A refresher on regex
 
-## Lesson 1: Introduction to Regular Expressions
+## Conceptual Knowledge
+
+### Lesson 1: Introduction to Regular Expressions
 
 1. What are regular expressions?
         
@@ -18,7 +20,7 @@
         - Find and replace text patterns in documents.
         - Search for specific words or phrases in text.
 
-## Lesson 2: Character Classes and Literals
+#### Lesson 2: Character Classes and Literals
 
 
 1. What are character classes and literals?
@@ -45,7 +47,7 @@
 
         Exercises: Match all lowercase letters, match all digits, match all punctuation marks.
 
-## Lesson 3: Special Characters
+### Lesson 3: Special Characters
 
 1. Understanding special characters like ".", "*", "+", "?", "^", and "$"
         
@@ -86,7 +88,7 @@ Lesson 4: Quantifiers
         Exercises: Match valid email addresses with different domains, such as "user@example.com" or "contact@mywebsite.co.uk."
 
 
-## Lesson 5: Alternation and Groups
+### Lesson 5: Alternation and Groups
 
 1. Using "|" for alternation
         
@@ -106,7 +108,7 @@ Lesson 4: Quantifiers
 
         Exercises: Match phone numbers in either "(555) 555-5555" or "555-5555" formats.
 
-## Lesson 6: Character Classes and Shorthand
+### Lesson 6: Character Classes and Shorthand
 
 1. How to use predefined character classes like "\d", "\w", "\s"
         
@@ -125,7 +127,7 @@ Lesson 4: Quantifiers
         Examples: Match all the digits in a string using "\d+", match all non-alphanumeric characters using "\W".
         Exercises: Match lines containing only whitespace characters, match lines that don't contain any vowels.
 
-## Lesson 7: Anchors
+### Lesson 7: Anchors
 
  1. Understanding anchors like "^" (start of string) and "$" (end of string)
    
@@ -145,7 +147,7 @@ Lesson 4: Quantifiers
 
         Exercises: Match lines in a text that end with a period ".", match lines that contain the word "Python" at the beginning of a line.
 
-## Lesson 8: More Advanced Concepts
+### Lesson 8: More Advanced Concepts
 
 1. Lookaheads and lookbehinds
         
@@ -162,7 +164,7 @@ Lesson 4: Quantifiers
         
         Exercises: Match phone numbers that are not part of email signatures, use non-capturing groups to match optional prefixes.
 
-## Lesson 9: Practical Applications
+### Lesson 9: Practical Applications
 
 1. Real-world examples of using regular expressions in Python
         
@@ -176,7 +178,7 @@ Lesson 4: Quantifiers
         
         Provide examples of using regular expressions to extract data like email addresses, URLs, dates, and phone numbers from text.
 
-## Lesson 10: Best Practices and Resources
+### Lesson 10: Best Practices and Resources
 
 1. Best practices for writing efficient and readable regular expressions
         
@@ -189,3 +191,73 @@ Lesson 4: Quantifiers
 3. Common mistakes to avoid
         
         Highlight common mistakes like excessive complexity, inefficient patterns, and not considering edge cases.
+
+## Practical knowldege
+
+### some python code
+
+```python
+import re
+
+# Sample text for testing regular expressions
+sample_text = """
+Alice's email is alice@example.com, and Bob's email is bob@example.org.
+You can reach them at (555) 123-4567 or (555) 987-6543. They live at
+123 Main St., Wonderland. The date today is 09-30-2023. Please contact
+them if you have any questions.
+"""
+
+# Lesson 2: Character Classes and Literals
+# Matching single characters using literals and character classes
+match_a = re.findall(r'a', sample_text)
+match_vowels = re.findall(r'[aeiou]', sample_text)
+print("Match 'a':", match_a)
+print("Match vowels:", match_vowels)
+
+# Lesson 3: Special Characters
+# Matching patterns with special characters
+match_emails = re.findall(r'\S+@\S+', sample_text)
+match_dates = re.findall(r'\d{2}-\d{2}-\d{4}', sample_text)
+print("Match emails:", match_emails)
+print("Match dates:", match_dates)
+
+# Lesson 4: Quantifiers
+# Matching repeated patterns
+match_phone_numbers = re.findall(r'\(\d{3}\) \d{3}-\d{4}|\d{3}-\d{4}', sample_text)
+print("Match phone numbers:", match_phone_numbers)
+
+# Lesson 5: Alternation and Groups
+# Using alternation and capturing groups
+match_names = re.findall(r'(Alice|Bob)', sample_text)
+print("Match names:", match_names)
+
+# Lesson 6: Character Classes and Shorthand
+# Using predefined character classes and shortcuts
+match_digits = re.findall(r'\d', sample_text)
+match_whitespace = re.findall(r'\s', sample_text)
+print("Match digits:", match_digits)
+print("Match whitespace:", match_whitespace)
+
+# Lesson 7: Anchors
+# Using anchors to match patterns at the start and end
+match_start_with_Alice = re.findall(r'^Alice', sample_text)
+match_end_with_question = re.findall(r'\?$', sample_text)
+print("Match start with 'Alice':", match_start_with_Alice)
+print("Match end with '?':", match_end_with_question)
+
+# Lesson 8: More Advanced Concepts
+# Using lookaheads and non-capturing groups
+match_lookahead = re.findall(r'(?=contact)Alice', sample_text)
+match_non_capturing_group = re.findall(r'(?:Alice|Bob)', sample_text)
+print("Match 'Alice' followed by 'contact':", match_lookahead)
+print("Match names (non-capturing group):", match_non_capturing_group)
+
+# Final Project: Regex Project
+# Extracting emails and phone numbers from the sample text
+extracted_emails = re.findall(r'\S+@\S+', sample_text)
+extracted_phone_numbers = re.findall(r'\(\d{3}\) \d{3}-\d{4}|\d{3}-\d{4}', sample_text)
+print("Extracted emails:", extracted_emails)
+print("Extracted phone numbers:", extracted_phone_numbers)
+```
+
+
