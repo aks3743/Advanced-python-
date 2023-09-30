@@ -4,40 +4,40 @@
 
 1. What are regular expressions?
         
-        Regular expressions, often abbreviated as regex or regexp, are powerful text-processing patterns used to search for, match, and manipulate strings of text. They provide a concise and flexible way to describe complex text patterns.
+    Regular expressions, often abbreviated as regex or regexp, are powerful text-processing patterns used to search for, match, and manipulate strings of text. They provide a concise and flexible way to describe complex text patterns.
 
 2. Why are regular expressions useful in Python?
         
-        Regular expressions are essential for text processing tasks such as data validation, text extraction, and search operations. They are widely used in Python for tasks like parsing log files, validating user input, and web scraping.
+    Regular expressions are essential for text processing tasks such as data validation, text extraction, and search operations. They are widely used in Python for tasks like parsing log files, validating user input, and web scraping.
 
 3. Basic use cases for regular expressions
         
-        Regular expressions can be used to:
-            - Validate email addresses and phone numbers.
-            - Extract data from unstructured text.
-            - Find and replace text patterns in documents.
-            - Search for specific words or phrases in text.
+    Regular expressions can be used to:
+        - Validate email addresses and phone numbers.
+        - Extract data from unstructured text.
+        - Find and replace text patterns in documents.
+        - Search for specific words or phrases in text.
 
 ## Lesson 2: Character Classes and Literals
 
 
 1. What are character classes and literals?
    
-        Character literals are specific characters that you want to match exactly. For example, "a" will match the character "a" in a string.
+    Character literals are specific characters that you want to match exactly. For example, "a" will match the character "a" in a string.
 
-        Character classes are enclosed in square brackets [] and allow you to specify a set of characters to match. For example, [aeiou] will match any vowel.
+    Character classes are enclosed in square brackets [] and allow you to specify a set of characters to match. For example, [aeiou] will match any vowel.
 
 2. How to match specific characters using literals
         
-        To match a specific character, simply use that character as a literal in your regex pattern. 
-        
-        For example, "cat" will match the string "cat" in the text.
+    To match a specific character, simply use that character as a literal in your regex pattern. 
+    
+    For example, "cat" will match the string "cat" in the text.
 
 3. Using square brackets for character classes
         
-        Square brackets allow you to create a character class to match any character within them. 
-        
-        For example, [aeiou] will match any vowel in a string.
+    Square brackets allow you to create a character class to match any character within them. 
+    
+    For example, [aeiou] will match any vowel in a string.
 
 4. Examples and exercises for matching single characters
         
@@ -117,7 +117,7 @@ Lesson 6: Character Classes and Shorthand
 2. Using shortcuts like "\D", "\W", "\S"
         
         The capital versions of predefined character classes negate the matching.
-        
+
         "\D" matches any character that is not a digit, "\W" matches any character that is not a word character, and "\S" matches any character that is not whitespace.
 
     Examples and exercises for using character classes and shortcuts
